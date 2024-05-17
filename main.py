@@ -5,12 +5,12 @@ import pandas as pd
 # Sample data: items table, warehouse tables
 
 @st.cache_data
-def load_model(model_name):
-    items_data = pd.read_excel(model_name)
-    wh1_df = pd.read_excel(model_name)
-    wh2_df = pd.read_excel(model_name)
-    wh3_df = pd.read_excel(model_name)
-    return items_data, wh1_df,wh2_df,wh3_df
+def load_model(model_name, sheet_name=None):
+    if sheet_name:
+        data = pd.read_excel(model_name, sheet_name=sheet_name, engine='openpyxl')
+    else:
+        data = pd.read_excel(model_name, engine='openpyxl')
+    return data
 
 items_data = load_model('Items B2B data.xlsx','Items B2B' ,engine='openpyxl')
 wh1_df = load_model('Stocks Warehouse wise/Sunkadkate.xlsx', engine='openpyxl')
