@@ -6,10 +6,7 @@ import pandas as pd
 
 @st.cache_data
 def load_model(model_name, sheet_name=None):
-    if sheet_name:
-        data = pd.read_excel(model_name, sheet_name=sheet_name, engine='openpyxl')
-    else:
-        data = pd.read_excel(model_name, engine='openpyxl')
+    data = pd.read_excel(model_name)
     return data
 
 items_data = load_model('Items B2B data.xlsx','Items B2B' ,engine='openpyxl')
