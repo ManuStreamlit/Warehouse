@@ -9,10 +9,10 @@ def load_model(model_name, sheet_name=None):
     data = pd.read_excel(model_name)
     return data
 
-items_data = load_model('Items B2B data.xlsx','Items B2B' ,engine='openpyxl')
-wh1_df = load_model('Stocks Warehouse wise/Sunkadkate.xlsx', engine='openpyxl')
-wh2_df = load_model('Stocks Warehouse wise/Makali.xlsx', engine='openpyxl')
-wh3_df = load_model('Stocks Warehouse wise/Magadi.xlsx', engine='openpyxl')
+items_data = load_model('Items B2B data.xlsx','Items B2B')
+wh1_df = load_model('Stocks Warehouse wise/Sunkadkate.xlsx')
+wh2_df = load_model('Stocks Warehouse wise/Makali.xlsx')
+wh3_df = load_model('Stocks Warehouse wise/Magadi.xlsx')
 
 # Merge warehouse tables with items table
 
