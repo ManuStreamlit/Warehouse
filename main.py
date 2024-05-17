@@ -9,7 +9,7 @@ def load_model(model_name, sheet_name=None):
     data = pd.read_excel(model_name)
     return data
 
-items_data = load_model('Items B2B data.xlsx','Items B2B')
+items_data = load_model('Items B2B data.xlsx')
 wh1_df = load_model('Stocks Warehouse wise/Sunkadkate.xlsx')
 wh2_df = load_model('Stocks Warehouse wise/Makali.xlsx')
 wh3_df = load_model('Stocks Warehouse wise/Magadi.xlsx')
