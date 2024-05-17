@@ -4,10 +4,18 @@ import pandas as pd
 
 # Sample data: items table, warehouse tables
 
-items_data = pd.read_excel('Items B2B data.xlsx','Items B2B' ,engine='openpyxl')
-wh1_df = pd.read_excel('Stocks Warehouse wise/Sunkadkate.xlsx', engine='openpyxl')
-wh2_df = pd.read_excel('Stocks Warehouse wise/Makali.xlsx', engine='openpyxl')
-wh3_df = pd.read_excel('Stocks Warehouse wise/Magadi.xlsx', engine='openpyxl')
+@st.cache_data
+def load_model(model_name):
+    items_data = pd.read_excel(model_name)
+    wh1_df = pd.read_excel(model_name)
+    wh2_df = pd.read_excel(model_name)
+    wh3_df = pd.read_excel(model_name)
+    return items_data, wh1_df,wh2_df,wh3_df
+
+items_data = load_model('Items B2B data.xlsx','Items B2B' ,engine='openpyxl')
+wh1_df = load_model('Stocks Warehouse wise/Sunkadkate.xlsx', engine='openpyxl')
+wh2_df = load_model('Stocks Warehouse wise/Makali.xlsx', engine='openpyxl')
+wh3_df = load_model('Stocks Warehouse wise/Magadi.xlsx', engine='openpyxl')
 
 # Merge warehouse tables with items table
 
