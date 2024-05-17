@@ -14,6 +14,9 @@ wh1_df = load_model('Stocks Warehouse wise/Sunkadkate.xlsx')
 wh2_df = load_model('Stocks Warehouse wise/Makali.xlsx')
 wh3_df = load_model('Stocks Warehouse wise/Magadi.xlsx')
 
+# Inspect columns of items_data and wh1_df
+st.write("Columns of items_data:", items_data.columns)
+st.write("Columns of wh1_df:", wh1_df.columns)
 # Merge warehouse tables with items table
 
 # First Merge with Warehouse1
