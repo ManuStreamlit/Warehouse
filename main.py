@@ -6,10 +6,13 @@ import pandas as pd
 
 @st.cache_data
 def load_model(model_name, sheet_name=None):
-    data = pd.read_excel(model_name)
+    if sheet_name:
+        data = pd.read_excel(model_name, sheet_name=sheet_name)
+    else:
+        data = pd.read_excel(model_name)
     return data
 
-items_data = load_model('Items B2B data.xlsx')
+items_data = load_model('Items B2B data.xlsx','Items B2B')
 wh1_df = load_model('Stocks Warehouse wise/Sunkadkate.xlsx')
 wh2_df = load_model('Stocks Warehouse wise/Makali.xlsx')
 wh3_df = load_model('Stocks Warehouse wise/Magadi.xlsx')
